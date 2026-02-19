@@ -16,3 +16,8 @@ Behavioural repayment history can generate explainable early warning signals wit
 
 Objective:
 To evaluate whether manually constructed EWS risk score performs comparably to raw behavioural features.
+| Model    | Features                 | ROC-AUC    |
+| -------- | ------------------------ | ---------- |
+| Logistic | Raw behavioural features | **0.7192** |
+| Logistic | Aggregated EWS score     | **0.7058** |
+| Logistic | Combined                 | **0.7192** |
