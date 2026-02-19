@@ -36,3 +36,13 @@ Stability Results on Raw Behaviour Features
 | 100  | 0.7348  |
 
 Stability analysis across five random splits produced ROC-AUC values between 0.719 and 0.735 (mean ≈ 0.727), indicating low variance and consistent predictive performance of behavioural EWS features.
+
+## Experiment 2: Logistic Regression explainability
+
+| Feature            | Coefficient  | Odds Ratio  | Meaning               |
+| ------------------ | ------------ | ----------- | --------------------- |
+| payment_volatility | **0.7633**   | **2.145**   | 114% increase in odds |
+| risk_trend_score   | **0.6392**   | **1.895**   | 89% increase in odds  |
+| liquidity_stress   | **0.000030** | **1.00003** | ~0% increase          |
+
+Odds ratio analysis reveals behavioural volatility as the dominant risk driver (OR = 2.15), followed by recency-weighted delinquency (OR = 1.90). Liquidity stress exhibited negligible linear influence (OR ≈ 1), indicating behavioural dynamics may precede balance sheet stress in predictive power.
