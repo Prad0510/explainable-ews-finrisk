@@ -21,3 +21,7 @@ To evaluate whether manually constructed EWS risk score performs comparably to r
 | Logistic | Raw behavioural features | **0.7192** |
 | Logistic | Aggregated EWS score     | **0.7058** |
 | Logistic | Combined                 | **0.7192** |
+
+Results show that raw behavioural features achieved ROC-AUC = 0.719, while the aggregated EWS risk score achieved ROC-AUC = 0.706.
+
+Although the aggregated score underperforms slightly, the small performance gap suggests that behavioural risk compression retains most predictive information. This indicates potential for explainable, monitoring-based systems without significant predictive sacrifice.
