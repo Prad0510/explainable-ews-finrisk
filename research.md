@@ -39,10 +39,13 @@ Stability analysis across five random splits produced ROC-AUC values between 0.7
 
 ## Experiment 2: Logistic Regression explainability
 
-| Feature            | Coefficient  | Odds Ratio  | Meaning               |
-| ------------------ | ------------ | ----------- | --------------------- |
-| payment_volatility | **0.7633**   | **2.145**   | 114% increase in odds |
-| risk_trend_score   | **0.6392**   | **1.895**   | 89% increase in odds  |
-| liquidity_stress   | **0.000030** | **1.00003** | ~0% increase          |
-
+| Feature            | Coefficient  | Odds Ratio  |
+| ------------------ | ------------ | ----------- |
+| payment_volatility | **0.7633**   | **2.145**   |
+| risk_trend_score   | **0.6392**   | **1.895**   |
+| liquidity_stress   | **0.000030** | **1.00003** |
 Odds ratio analysis reveals behavioural volatility as the dominant risk driver (OR = 2.15), followed by recency-weighted delinquency (OR = 1.90). Liquidity stress exhibited negligible linear influence (OR ≈ 1), indicating behavioural dynamics may precede balance sheet stress in predictive power.
+
+## 2026-02-20
+
+- Nonlinear modeling via **Gradient Boosting** improved discriminatory power (ROC-AUC = 0.746) relative to logistic regression. Feature importance analysis revealed dominant influence of recency-weighted delinquency (80%), while liquidity stress exhibited modest but non-negligible contribution (8.7%), indicating nonlinear predictive effects undetected in linear modeling.
