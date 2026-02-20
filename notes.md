@@ -56,3 +56,5 @@ Objective: SHAP Explainability for Gradient Boosting
 <img width="807" height="282" alt="image" src="https://github.com/user-attachments/assets/dc609d7f-b3d2-4b22-b9e8-66a0e510e098" />
 
 - SHAP analysis confirms strong monotonic influence of recency-weighted delinquency. Payment volatility exhibits moderate positive impact, while liquidity stress shows limited marginal contribution concentrated near zero. These findings indicate behavioural dynamics dominate early warning prediction in the studied dataset.
+
+- SHAP-based explanation stability was evaluated across five random splits. Feature ranking remained invariant across all experiments, with recency-weighted delinquency consistently dominating, followed by behavioural volatility and liquidity stress. Magnitude variations were minor and did not alter interpretative conclusions, indicating robust explanation stability.
