@@ -9,6 +9,8 @@ Behavioural repayment history can generate explainable early warning signals wit
 ## 2026-02-18
 - Created payment_volatility feature using standard deviation across historical payment statuses to capture behavioural instability as an early warning indicator.
 - Engineered liquidity_stress feature to represent repayment pressure by comparing cumulative billed amounts against repayments.
+             liquidity_stress=∣total_bill∣+1(total_bill−total_payment)​
+  
 - Constructed continuous EWS risk score by combining normalized behavioural trend, payment volatility, and liquidity stress features to simulate dynamic risk monitoring.
 
 ## 2026-02-19
@@ -49,7 +51,7 @@ Odds ratio analysis reveals behavioural volatility as the dominant risk driver (
 
 ## 2026-02-20
 
-Objective: SHAP Explainability for Gradient Boosting
+Objective: SHAP Explainability & Stability for Gradient Boosting
 
 - Nonlinear modeling via **Gradient Boosting** improved discriminatory power (ROC-AUC = 0.746) relative to logistic regression. Feature importance analysis revealed dominant influence of recency-weighted delinquency (80%), while liquidity stress exhibited modest but non-negligible contribution (8.7%), indicating nonlinear predictive effects undetected in linear modeling.
 
@@ -58,3 +60,11 @@ Objective: SHAP Explainability for Gradient Boosting
 - SHAP analysis confirms strong monotonic influence of recency-weighted delinquency. Payment volatility exhibits moderate positive impact, while liquidity stress shows limited marginal contribution concentrated near zero. These findings indicate behavioural dynamics dominate early warning prediction in the studied dataset.
 
 - SHAP-based explanation stability was evaluated across five random splits. Feature ranking remained invariant across all experiments, with recency-weighted delinquency consistently dominating, followed by behavioural volatility and liquidity stress. Magnitude variations were minor and did not alter interpretative conclusions, indicating robust explanation stability.
+
+- Redesigning liquidity into dynamic components improved model performance (ROC-AUC = 0.755). Sudden payment reduction exhibited stronger explanatory contribution than gradual liquidity deterioration. However, behavioural recency remained the dominant risk driver, reinforcing the primacy of delinquency dynamics in early warning systems.
+| Feature            | Mean SHAP  | Importance|
+| ------------------ | ---------- | --------- |
+| risk_trend_score   | 0.806      | 0.543     |
+| payment_volatility | 0.118      | 0.206     |
+| liquidity_trend    | 0.041      | 0.122     |
+| payment_drop       | 0.035      | 0.092     |
