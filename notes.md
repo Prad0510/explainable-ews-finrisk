@@ -62,9 +62,10 @@ Objective: SHAP Explainability & Stability for Gradient Boosting
 - SHAP-based explanation stability was evaluated across five random splits. Feature ranking remained invariant across all experiments, with recency-weighted delinquency consistently dominating, followed by behavioural volatility and liquidity stress. Magnitude variations were minor and did not alter interpretative conclusions, indicating robust explanation stability.
 
 - Redesigning liquidity into dynamic components improved model performance (ROC-AUC = 0.755). Sudden payment reduction exhibited stronger explanatory contribution than gradual liquidity deterioration. However, behavioural recency remained the dominant risk driver, reinforcing the primacy of delinquency dynamics in early warning systems.
-| Feature            | Mean SHAP  | Importance|
-| ------------------ | ---------- | --------- |
-| risk_trend_score   | 0.806      | 0.543     |
-| payment_volatility | 0.118      | 0.206     |
-| liquidity_trend    | 0.041      | 0.122     |
-| payment_drop       | 0.035      | 0.092     |
+
+| Feature            | Mean SHAP  | Importance |
+| ------------------ | ---------- | ---------- |
+| risk_trend_score   | 0.806      | 0.543      |
+| payment_volatility | 0.118      | 0.206      |
+| liquidity_trend    | 0.041      | 0.122      |
+| payment_drop       | 0.035      | 0.092      |
