@@ -7,3 +7,11 @@ The system focuses on:
 - Explainable ML predictions (SHAP)
 - Stability analysis of model explanations
 - Interactive dashboard visualization
+
+## Progress Log
+
+### Phase 1
+- Research experiments completed (Logistic + GBM + SHAP)
+- Feature stability analysis across seeds
+- Dashboard initialized using Vite + React + Tailwind
+- Risk summary component created (static version)
