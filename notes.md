@@ -69,3 +69,24 @@ Objective: SHAP Explainability & Stability for Gradient Boosting
 | payment_volatility | 0.118      | 0.206     |
 | liquidity_trend    | 0.041      | 0.122     |
 | payment_drop       | 0.035      | 0.092     |
+
+## 2026-02-24
+
+Objective: Simulate EWS Timeline Behaviour
+
+- Created simplified rolling risk score using different historical cutoffs to check if EWS works properly.
+       Non-Defaulters                   Defaulters    
+| Stage        | Mean Risk |  | Stage        | Mean Risk |
+| ------------ | --------- |  | ------------ | --------- |
+| risk_m3      | 0.157     |  | risk_m3      | -0.391    |
+| risk_m2      | 0.233     |  | risk_m2      | -0.365    |
+| risk_m1      | 0.328     |  | risk_m1      | -0.333    |
+| risk_current | 0.442     |  | risk_current | -0.294    |
+
+- Temporal simulation demonstrates monotonic risk escalation among defaulting borrowers, with mean risk scores increasing steadily from historical month-3 to current month. Non-defaulting borrowers remain in negative risk territory, indicating strong temporal separation and early warning capability.
+
+
+
+
+
+
