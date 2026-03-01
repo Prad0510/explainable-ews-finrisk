@@ -15,3 +15,10 @@ The system focuses on:
 - Feature stability analysis across seeds
 - Dashboard initialized using Vite + React + Tailwind
 - Risk summary component created (static version)
+
+### Phase 2
+- Integrated ML portfolio metrics into dashboard (JSON pipeline)
+- Added SHAP global feature importance visualization
+- Connected React frontend with exported model outputs
+
+<img width="1882" height="911" alt="image" src="https://github.com/user-attachments/assets/55599ad7-dff8-4a1f-880b-db7f1f922257" />
