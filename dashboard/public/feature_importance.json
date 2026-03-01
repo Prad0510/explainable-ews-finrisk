@@ -1,0 +1,1 @@
+[{"Feature": "risk_trend_score", "Mean_SHAP": 0.5426896149253415}, {"Feature": "payment_volatility", "Mean_SHAP": 0.20629425649871244}, {"Feature": "payment_drop", "Mean_SHAP": 0.12214771413135256}, {"Feature": "liquidity_trend", "Mean_SHAP": 0.09173977774001284}]
