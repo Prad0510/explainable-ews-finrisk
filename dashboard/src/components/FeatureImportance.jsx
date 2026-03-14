@@ -5,36 +5,34 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  ResponsiveContainer,
+  CartesianGrid
 } from "recharts";
 
-export default function FeatureImportance() {
-  const [data, setData] = useState(null);
+function FeatureImportance() {
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     fetch("/feature_importance.json")
       .then(res => res.json())
-      .then(result => setData(result));
+      .then(data => setData(data));
   }, []);
 
   if (!data) return <div className="mt-10">Loading Feature Importance...</div>;
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow mt-10">
-      <h2 className="text-xl font-semibold text-gray-700 mb-6">
-        SHAP Feature Importance
+    <div className="bg-white p-6 rounded-xl shadow mt-8">
+      <h2 className="text-xl font-semibold text-gray-700 mb-4">
+        Model Explainability (SHAP Feature Importance)
       </h2>
-
-      <div style={{ width: "100%", height: 350 }}>
-        <ResponsiveContainer>
-          <BarChart data={data}>
+        
+          <BarChart width={600} height={300} data={data}>
+            <CartesianGrid strokeDasharray="3 3"/>
             <XAxis dataKey="Feature" />
             <YAxis />
             <Tooltip />
-            <Bar dataKey="Mean_SHAP" fill="#3b82f6" />
+            <Bar dataKey="Mean_SHAP" />
           </BarChart>
-        </ResponsiveContainer>
       </div>
-    </div>
   );
 }
+export default FeatureImportance
